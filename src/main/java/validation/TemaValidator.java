@@ -2,7 +2,9 @@ package validation;
 import domain.Tema;
 
 public class TemaValidator implements Validator<Tema> {
+
     public void validate(Tema tema) throws ValidationException {
+
         if (tema.getID() == null || tema.getID().equals("")) {
             throw new ValidationException("ID invalid! \n");
         }

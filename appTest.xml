@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entitati>
+    <student ID="toir1234">
+        <Nume>Vlad_Dracula</Nume>
+        <Grupa>911</Grupa>
+    </student>
+    <student ID="cgie2491">
+        <Nume>Catargiu Georgiana</Nume>
+        <Grupa>910</Grupa>
+    </student>
+    <student ID="12#dap%p">
+        <Nume>Katherina</Nume>
+        <Grupa>932</Grupa>
+    </student>
+    <student ID="bmie2485">
+        <Nume>Breje Mihai</Nume>
+        <Grupa>932</Grupa>
+    </student>
+    <student ID="bmil994">
+        <Nume>Breje Mihai</Nume>
+        <Grupa>932</Grupa>
+    </student>
+    <student ID="kjig2255">
+        <Nume>încă Unu</Nume>
+        <Grupa>909</Grupa>
+    </student>
+</Entitati>
