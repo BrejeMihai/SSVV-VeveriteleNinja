@@ -42,8 +42,8 @@ public class BigBangTest {
 
     @Test
     public void testAddStudent() {
-        String id = "cgie2491";
-        String name = "Catargiu Georgiana Ecaterina";
+        String id = "cgie2499";
+        String name = "Catargiu Georgiana 2";
         int group = 932;
 
         assertEquals(0,service.saveStudent(id,name,group));
