@@ -7,6 +7,11 @@ import service.Service;
 import validation.StudentValidator;
 import validation.TemaValidator;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.AnyOf.anyOf;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertEquals;
+
 public class BigBangTest {
 
     public StudentXMLRepository studentXMLRepository;
@@ -38,7 +43,13 @@ public class BigBangTest {
 
     @Test
     public void testAddGrade() {
+        String studentID = "5";
+        String temaID = "10";
+        double valNota = -1;
+        int predata = 7;
+        String feedback = "Very nice ma boi.";
 
+        assertThat(this.service.saveNota(studentID, temaID, valNota, predata, feedback), anyOf(is(1), is(-1)));
     }
 
     @Test
