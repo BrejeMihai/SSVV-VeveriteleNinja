@@ -32,10 +32,10 @@ public class BigBangTest {
         studentXMLRepository = new StudentXMLRepository(studentValidator, "appTest.xml");
 
         temaValidator = new TemaValidator();
-        temaXMLRepository = new TemaXMLRepository(temaValidator, "appTest2.xml");
+        temaXMLRepository = new TemaXMLRepository(temaValidator, "appTest.xml");
 
         notaValidator = new NotaValidator();
-        notaXMLRepository = new NotaXMLRepository(notaValidator, "appTest3.xml");
+        notaXMLRepository = new NotaXMLRepository(notaValidator, "appTest.xml");
 
         service = new Service(studentXMLRepository, temaXMLRepository, notaXMLRepository);
     }
