@@ -1,9 +1,11 @@
 package ssvv.org.example;
 
 import org.junit.Test;
+import repository.NotaXMLRepository;
 import repository.StudentXMLRepository;
 import repository.TemaXMLRepository;
 import service.Service;
+import validation.NotaValidator;
 import validation.StudentValidator;
 import validation.TemaValidator;
 
@@ -22,6 +24,9 @@ public class BigBangTest {
     public TemaXMLRepository temaXMLRepository;
     public TemaValidator temaValidator;
 
+    public NotaXMLRepository notaXMLRepository;
+    public NotaValidator notaValidator;
+
     public BigBangTest() {
         studentValidator = new StudentValidator();
         studentXMLRepository = new StudentXMLRepository(studentValidator, "appTest.xml");
@@ -29,7 +34,10 @@ public class BigBangTest {
         temaValidator = new TemaValidator();
         temaXMLRepository = new TemaXMLRepository(temaValidator, "appTest2.xml");
 
-        service = new Service(studentXMLRepository, temaXMLRepository, null);
+        notaValidator = new NotaValidator();
+        notaXMLRepository = new NotaXMLRepository(notaValidator, "appTest3.xml");
+
+        service = new Service(studentXMLRepository, temaXMLRepository, notaXMLRepository);
     }
 
     @Test
@@ -67,6 +75,23 @@ public class BigBangTest {
 
     @Test
     public void testBangBang() {
+        String studentID = "ffie3377";
+        String name = "Katherine";
+        int group = 936;
 
+        assertEquals(0,service.saveStudent(studentID,name,group));
+
+        String temaID = "57";
+        String description = "Nem descriere, te descurci!";
+        int deadline = 9;
+        int startline = 7;
+
+        assertEquals(0,service.saveTema(temaID,description,deadline, startline));
+
+        double valNota = 10;
+        int predata = 9;
+        String feedback = "Extraordinar, talent innascut.";
+
+        assertEquals(0, this.service.saveNota(studentID, temaID, valNota, predata, feedback));
     }
 }
