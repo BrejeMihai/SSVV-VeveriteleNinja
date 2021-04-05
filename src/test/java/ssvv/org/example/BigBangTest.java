@@ -7,6 +7,8 @@ import service.Service;
 import validation.StudentValidator;
 import validation.TemaValidator;
 
+import static org.junit.Assert.assertEquals;
+
 public class BigBangTest {
 
     public StudentXMLRepository studentXMLRepository;
@@ -28,11 +30,23 @@ public class BigBangTest {
 
     @Test
     public void testAddStudent() {
+        String id = "cgie2491";
+        String name = "Catargiu Georgiana Ecaterina";
+        int group = 932;
+
+        assertEquals(0,service.saveStudent(id,name,group));
 
     }
 
     @Test
     public void testAddAssignment() {
+
+        String id = "1998";
+        String description = "tema noua pe langa cele o mie deja existente, enjoy";
+        int deadline = 7;
+        int startline = 5;
+
+        assertEquals(0,service.saveTema(id,description,deadline, startline));
 
     }
 
