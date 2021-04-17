@@ -94,4 +94,42 @@ public class BigBangTest {
 
         assertEquals(0, this.service.saveNota(studentID, temaID, valNota, predata, feedback));
     }
+
+    @Test
+    public void testIncrementalTD_1() {
+        String id = "tuir2444";
+        String name = "Tudoras Urzica";
+        int group = 935;
+
+        assertEquals(0,service.saveStudent(id,name,group));
+
+        String assignID = "1337";
+        String description = "hai ca se poate";
+        int deadline = 3;
+        int startline = 1;
+
+        assertEquals(0,service.saveTema(assignID,description,deadline, startline));
+    }
+
+    @Test
+    public void testIncrementalTD_2() {
+        String studID = "loir2445";
+        String name = "Lorand Onion";
+        int group = 933;
+
+        assertEquals(0,service.saveStudent(studID,name,group));
+
+        String assignID = "5151";
+        String description = "Tulai doamne";
+        int deadline = 5;
+        int startline = 3;
+
+        assertEquals(0,service.saveTema(assignID,description,deadline, startline));
+
+        double valNota = 10;
+        int predata = 5;
+        String feedback = "Nemaipomenit de tare!";
+
+        assertEquals(0, this.service.saveNota(studID, assignID, valNota, predata, feedback));
+    }
 }
